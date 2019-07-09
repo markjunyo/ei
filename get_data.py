@@ -5,10 +5,6 @@ import json
 import datetime
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-sns.set(style="darkgrid")
-
 
 def store_last_date(storage,d,dt):
     if d not in storage.keys():
@@ -23,12 +19,17 @@ def store_last_date(storage,d,dt):
 
 #outside loop
 last_date_storage={}
-quandl.ApiConfig.api_key = 'AT9LRyJ4iQx8f29VQaR8'
 
-f=open('datacode.config')
+# move this to config file
+quandl.ApiConfig.api_key = 'AT9LRyJ4iQx8f29VQaR8'
+f=open('datacode_industry.config')
+
+
+
 lines = f.readlines()
 
 count = 0
+
 
 for line in lines:
 # inside loop
